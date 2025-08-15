@@ -1,6 +1,6 @@
 # Unified Play Layer
 
-> Modern gaming, AI, and Web3 themed interface.  
+> Modern gaming and Web3 themed interface.  
 > Inspired by Zentry
 
 Live: https://unified-play-layer.vercel.app 
