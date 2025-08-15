@@ -16,7 +16,10 @@ const Hero = () => {
   const totalVideos = 4;
   const nextVideoRef = useRef(null);
 
-  const HandleVideoLoad = () => {
+  const HandleVideoLoad = (index) => {
+    if (index === 1) {
+      setIsLoading(false);
+    }
     setLoadedVideos((prev) => prev + 1);
   };
 
@@ -112,7 +115,7 @@ const Hero = () => {
                 muted
                 id="current-video"
                 className="size-64 origin-center scale-150 object-cover object-center"
-                onLoadedData={HandleVideoLoad}
+                onLoadedData={() => HandleVideoLoad(upcomingVideoIndex)}
               />
             </div>
           </div>
@@ -124,7 +127,7 @@ const Hero = () => {
             muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onLoadedData={HandleVideoLoad}
+            onLoadedData={() => HandleVideoLoad(currentIndex)}
           />
 
           <video
@@ -135,7 +138,7 @@ const Hero = () => {
             loop
             muted
             className="absolute left-0 top-0 size-full object-cover object-center"
-            onLoadedData={HandleVideoLoad}
+            onLoadedData={() => HandleVideoLoad(currentIndex)}
           />
         </div>
 
