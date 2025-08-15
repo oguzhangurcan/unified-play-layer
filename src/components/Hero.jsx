@@ -114,6 +114,7 @@ const Hero = () => {
                 loop
                 muted
                 id="current-video"
+                poster={`videos/hero-${upcomingVideoIndex}.jpg`}
                 className="size-64 origin-center scale-150 object-cover object-center"
                 onLoadedData={() => HandleVideoLoad(upcomingVideoIndex)}
               />
@@ -126,6 +127,7 @@ const Hero = () => {
             loop
             muted
             id="next-video"
+            poster={`videos/hero-${currentIndex}.jpg`}
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={() => HandleVideoLoad(currentIndex)}
           />
@@ -137,6 +139,8 @@ const Hero = () => {
             autoPlay
             loop
             muted
+            playsInline
+            poster="videos/hero-1.jpg"
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={() => HandleVideoLoad(currentIndex)}
           />
